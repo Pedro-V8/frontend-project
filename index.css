@@ -1,0 +1,35 @@
+body{
+    margin: 0px;
+    font: sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+
+.division{
+    margin-top: 10px;
+    border: 1px solid rgb(81, 229, 255);
+    outline: none;
+    display: flex;
+    font-family: sans-serif;
+}
+
+.title{
+    font-size: 3.5vw;
+    color: rgb(85, 88, 88);
+    margin-left: 39%;
+    font-family: sans-serif;
+}
+
+
+.image{
+    width: 40%;
+    height: 40%;
+}
+
+.esquerda{
+    cursor: pointer;
+}
+
+.direita{
+    cursor: pointer;
+}
