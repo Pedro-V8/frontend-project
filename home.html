@@ -56,17 +56,17 @@
 
 
 
-                    while(arrayCliente.length < 10){
-                        let imagem = random(data.length)
+                   // while(arrayCliente.length < 10){
+                     //   let imagem = random(data.length)
 
-                        if(arrayCliente.indexOf(result[imagem]) === -1)
-                        {
-                            arrayCliente.push(data[imagem])
-                            console.log(imagem)
-                            console.log(Math.floor(imagem))
-                        }
+                      //  if(arrayCliente.indexOf(result[imagem]) === -1)
+                      //  {
+                       //     arrayCliente.push(data[imagem])
+                       //     console.log(imagem)
+                       //     console.log(Math.floor(imagem))
+                       // }
 
-                    }
+                    //}
 
 
                     console.log(result)
@@ -88,7 +88,7 @@
 
             function testeClique(indice = 0){
                 let botao = document.querySelector('.botao').addEventListener('click' , () =>{
-                    $(".image").attr("src", arrayCliente[0].url)
+                    $(".image").attr("src", result[0].url)
                     document.querySelector('.botao').style.display = 'none'
                     //indice++
                     //if(indice === result.length)
@@ -100,9 +100,9 @@
 
                 let direita = document.querySelector('.direita').addEventListener('click' , () =>{
                     indice += 1
-                    $(".image").attr("src", arrayCliente[indice].url)
+                    $(".image").attr("src", result[indice].url)
     
-                    if(indice === arrayCliente.length)
+                    if(indice === result.length)
                     {
                         indice = 0
                     }
@@ -113,7 +113,7 @@
 
                 let esquerda = document.querySelector('.esquerda').addEventListener('click' , () =>{
                     indice -= 1
-                    $(".image").attr("src", arrayCliente[indice].url)
+                    $(".image").attr("src", result[indice].url)
                     //indice --
                     //console.log(result[indice].url)
                     console.log(indice)
