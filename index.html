@@ -15,12 +15,29 @@
 
     <div class="header">
         <label class="title">WAIFUPICS</label>
-        <div class="division"></div>
     </div>
-    <button class="botao">Click me</button>
-    <img class="image">
-    <img src="imagens/esquerda.png" class="esquerda">
-    <img src="imagens/direita.png" class="direita">
+
+    <div class="division"></div>
+
+
+    <div class="manager">
+        <div class="option">
+            <img src="imagens/sEsquerda.png" class="esquerda">
+        </div>
+
+        <button class="botao">Click me</button>
+    
+        <div class="option">
+            <img src="imagens/sDireita.png" class="direita">
+        </div>
+    
+    </div>
+
+
+    <div class="imageContent">
+        <img class="image">
+    </div>
+
 
 
 
@@ -31,7 +48,7 @@
 
             async function getContent(){
                 try {
-                    const response = await fetch('http://localhost:3333/imagens') 
+                    const response = await fetch('https://wa-images-backend.herokuapp.com/imagens') 
                     const data = await response.json()
                     data.map((e) => {
                         result.push(e)
@@ -39,17 +56,17 @@
 
 
 
-                    //while(arrayCliente.length < 10){
+                   // while(arrayCliente.length < 10){
                         //let imagem = random(data.length)
 
                         //if(arrayCliente.indexOf(result[imagem]) === -1)
-                       // {
-                           // arrayCliente.push(data[imagem])
+                        //{
+                          //  arrayCliente.push(data[imagem])
                           //  console.log(imagem)
-                            //console.log(Math.floor(imagem))
+                           // console.log(Math.floor(imagem))
                         //}
 
-                   // }
+                    //}
 
 
                     console.log(result)
@@ -69,14 +86,38 @@
 
             
 
-            function testeClique(indice = 0 , dt){
+            function testeClique(indice = 0){
                 let botao = document.querySelector('.botao').addEventListener('click' , () =>{
+                    $(".image").attr("src", result[0].url)
+                    document.querySelector('.botao').style.display = 'none'
+                    //indice++
+                    //if(indice === result.length)
+                    //{
+                      //  indice = 0
+                    //}
+                    
+                })
+
+                let direita = document.querySelector('.direita').addEventListener('click' , () =>{
+                    indice += 1
                     $(".image").attr("src", result[indice].url)
-                    indice++
+    
                     if(indice === result.length)
                     {
                         indice = 0
                     }
+
+                    //indice ++
+                    console.log(indice)
+                })
+
+                let esquerda = document.querySelector('.esquerda').addEventListener('click' , () =>{
+                    indice -= 1
+                    $(".image").attr("src", result[indice].url)
+                    //indice --
+                    //console.log(result[indice].url)
+                    console.log(indice)
+
                 })
             }
 
